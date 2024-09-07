@@ -3,14 +3,16 @@ const { test, expect } = require("../support/index");
 const { faker } = require('@faker-js/faker');
 
 test('CT-001 Deve cadastrar com sucesso um lead na fila de espera', async ({ page }) => {
-   const msg ='Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!'
-   const leadName = faker.person.fullName()
-   const leadEmail = faker.internet.email()
+   
+  const msg ='Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato.';
 
-   await page.leads.visit();
-   await page.leads.openModal(); 
-   await page.leads.submitLeadForm(leadName, leadEmail);
-   await page.toast.containText(msg);  
+  const leadName = faker.person.fullName()
+  const leadEmail = faker.internet.email()
+
+  await page.leads.visit();
+  await page.leads.openModal(); 
+  await page.leads.submitLeadForm(leadName, leadEmail);
+  await page.popup.haveText(msg);  
 });
 test('CT-002 Não deve cadastrar um lead com email já cadastrado', async ({ page, request }) => {
   
@@ -29,8 +31,8 @@ test('CT-002 Não deve cadastrar um lead com email já cadastrado', async ({ pag
   await page.leads.openModal(); 
   await page.leads.submitLeadForm(leadName, leadEmail);
 
-  const msg ='O endereço de e-mail fornecido já está registrado em nossa fila de espera.'
-  await page.toast.containText(msg);   
+  const msg ='Verificamos que o endereço de e-mail fornecido já consta em nossa lista de espera. Isso significa que você está um passo mais perto de aproveitar nossos serviços.'
+  await page.popup.haveText(msg);   
 });
 
 test('CT-003 Não deve cadastrar com email incorreto', async ({ page }) => {

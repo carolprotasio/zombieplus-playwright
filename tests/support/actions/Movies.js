@@ -21,6 +21,7 @@ export class Movies {
 
     await this.page
       .locator("#select_company_id .react-select__indicator").click();
+    
     await this.page
       .locator(".react-select__option")
       .filter({ hasText: movie.company })

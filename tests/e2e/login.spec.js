@@ -9,8 +9,8 @@ test("CT-002 Não deve logar com senha incorreta", async ({ page }) => {
   await page.login.loginForm("admin@zombieplus.com", "senhaIncorreta");
 
   const msg =
-    "Oops!Ocorreu um erro ao tentar efetuar o login. Por favor, verifique suas credenciais e tente novamente.";
-  await page.toast.containText(msg);
+    "Ocorreu um erro ao tentar efetuar o login. Por favor, verifique suas credenciais e tente novamente.";
+  await page.popup.haveText(msg);
 });
 test("CT-003 Não deve logar com formatação do email incorreta", async ({
   page,
@@ -19,15 +19,13 @@ test("CT-003 Não deve logar com formatação do email incorreta", async ({
   await page.login.loginForm("admin.zombieplus.com", "pwd123");
   await page.login.alertHasText("Email incorreto");
 });
-test("CT-004 Não deve logar se for email diferente do ADM", async ({
-  page,
-}) => {
+test("CT-004 Não deve logar se for email diferente do ADM", async ({ page,}) => {
   await page.login.visit();
   await page.login.loginForm("diferenteEmail@zombieplus.com", "pwd123");
 
   const msg =
-    "Oops!Ocorreu um erro ao tentar efetuar o login. Por favor, verifique suas credenciais e tente novamente.";
-  await page.toast.containText(msg);
+    "Ocorreu um erro ao tentar efetuar o login. Por favor, verifique suas credenciais e tente novamente.";
+  await page.popup.haveText(msg);
 });
 test("CT-005 Não deve logar se email não for preenchido", async ({ page }) => {
   await page.login.visit();

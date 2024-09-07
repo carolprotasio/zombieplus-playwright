@@ -1,16 +1,18 @@
 const { expect } = require("@playwright/test");
 
-export class Toast {
+export class Popup {
   constructor(page) {
     this.page = page;
   }
   
-  async containText(msg) {    
+  async haveText(msg) {    
     await this.page.waitForTimeout(300);  
-    const toast = this.page.locator('.toast'); 
+    const element = this.page.locator('.swal2-html-container'); 
 
-    await expect(toast).toContainText(msg);  
-    await expect(toast).not.toBeVisible({ timeout: 5000 });
+    await expect(element).toHaveText(msg);  
+    
   }
+
+  
 };
 
