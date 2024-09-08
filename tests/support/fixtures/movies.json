@@ -15,93 +15,48 @@
       "featured": true,
       "cover": "/covers/movies/resident-evil.jpg"
 },
-
-  "a_quiet_place": {
-    "title": "Um Lugar Silencioso",
-    "overview": "Em um mundo pós-apocalíptico, uma família deve viver em silêncio absoluto para evitar criaturas que caçam usando o som.",
-    "featured": false,
-    "release_year": 2018,
-    "company": "Paramount Pictures",
-    "cover": "/images/a_quiet_place.jpg"
-  },
-  "jumanji_welcome_to_the_jungle": {
-    "title": "Jumanji: Bem-Vindo à Selva",
-    "overview": "Quatro adolescentes são transportados para o mundo de Jumanji e devem jogar como personagens do jogo para escapar da selva perigosa.",
-    "featured": false,
-    "release_year": 2017,
-    "company": "Sony Pictures",
-    "cover": "/images/jumanji_welcome_to_the_jungle.jpg"
-  },
-  "spider_man_no_way_home": {
-    "title": "Homem-Aranha: Sem Volta Para Casa",
-    "overview": "Peter Parker pede ajuda ao Doutor Estranho para apagar a memória do mundo sobre sua identidade secreta, mas as coisas saem do controle, trazendo vilões de outras dimensões.",
-    "featured": false,
-    "release_year": 2021,
-    "company": "Sony Pictures",
-    "cover": "/images/spider_man_no_way_home.jpg"
-  },
-  "the_lion_king": {
-    "title": "O Rei Leão",
-    "overview": "O jovem leão Simba deve reivindicar seu lugar como rei da Savana depois que seu pai, Mufasa, é assassinado pelo tio Scar.",
-    "featured": false,
-    "release_year": 1994,
-    "company": "Walt Disney",
-    "cover": "/images/the_lion_king.jpg"
-  },
-  "guardians_of_the_galaxy": {
-    "title": "Guardiões da Galáxia",
-    "overview": "Um grupo de desajustados se une para formar os Guardiões da Galáxia e impedir que um vilão universal destrua o cosmos.",
-    "featured": false,
-    "release_year": 2014,
-    "company": "Marvel Studios",
-    "cover": "/images/guardians_of_the_galaxy.jpg"
-  },
-  "jurassic_world": {
-    "title": "Jurassic World",
-    "overview": "Um parque temático de dinossauros recria a experiência de Jurassic Park, mas quando um dinossauro geneticamente modificado escapa, a equipe deve lidar com a ameaça.",
-    "featured": false,
-    "release_year": 2015,
-    "company": "Universal Pictures",
-    "cover": "/images/jurassic_world.jpg"
-  },
-  "the_faulkner_heritage": {
-    "title": "O Legado de Faulkner",
-    "overview": "A história de uma família que descobre segredos e mistérios sobre um legado literário que ameaça mudar suas vidas para sempre.",
-    "featured": false,
-    "release_year": 2021,
-    "company": "Amazon Studios",
-    "cover": "/images/the_faulkner_heritage.jpg"
-  },
-  "tenet": {
-    "title": "Tenet",
-    "overview": "Um agente secreto é envolvido em uma missão para evitar a Terceira Guerra Mundial usando a inversão temporal, enfrentando desafios que desafiam a compreensão.",
-    "featured": false,
-    "release_year": 2020,
-    "company": "Warner Bros",
-    "cover": "/images/tenet.jpg"
-  },
-  "doolittle": {
-    "title": "Dolittle",
-    "overview": "O Dr. Dolittle, um médico que pode falar com animais, embarca em uma jornada para encontrar uma cura para a jovem rainha.",
-    "featured": false,
-    "release_year": 2020,
-    "company": "Universal Pictures",
-    "cover": "/images/doolittle.jpg"
-  },
-  "the_witcher": {
-    "title": "The Witcher",
-    "overview": "Geralt de Rívia, um caçador de monstros, enfrenta monstros e intrigas em um mundo cheio de magia e criaturas perigosas.",
-    "featured": false,
-    "release_year": 2019,
-    "company": "Netflix",
-    "cover": "/images/the_witcher.jpg"
-  },
-  "stranger_things": {
-    "title": "Stranger Things",
-    "overview": "Um grupo de crianças enfrenta fenômenos paranormais e mistérios em sua cidade pequena após o desaparecimento de um de seus amigos.",
-    "featured": false,
-    "release_year": 2016,
-    "company": "Netflix",
-    "cover": "/images/stranger_things.jpg"
+  "to_remove": {
+      "title": "A Noite dos Mortos-Vivos",
+      "overview": "Um grupo de pessoas fica preso em uma casa enquanto zumbis canibais famintos cercam o local.",
+      "company": "Universal Pictures",
+      "release_year": 1968,
+      "featured": true,
+      "cover": "/covers/movies/mortos-vivos.jpg"
+    },    
+    "search": {
+      "input": "zumbi",
+      "outputs": [
+        "Zumbilândia",
+        "Orgulho e Preconceito e Zumbis",
+        "Meu Namorado é um Zumbi"
+      ],
+      "data": [
+        {
+          "title": "Zumbilândia",
+          "overview": "Um grupo improvável de sobreviventes navega por um mundo cheio de zumbis, tentando encontrar um lugar seguro.",
+          "company": "Sony Pictures",
+          "release_year": 2009,
+          "featured": true,
+          "cover": "/covers/movies/zumbilandia.jpg"
+        },
+        {
+          "title": "Orgulho e Preconceito e Zumbis",
+          "overview": "Elizabeth Bennet e Sr. Darcy unem forças para combater uma praga de zumbis que assola a Inglaterra.",
+          "company": "Universal Pictures",
+          "release_year": 2016,
+          "featured": false,
+          "cover": "/covers/movies/opz.jpg"
+        },
+        {
+          "title": "Meu Namorado é um Zumbi",
+          "overview": "Em um mundo pós-apocalíptico, uma jovem se apaixona por um zumbi que ainda preserva algumas características humanas.",
+          "company": "Fox Entertainment",
+          "release_year": 2013,
+          "featured": false,
+          "cover": "/caminho/para/meu_namorado_e_um_zumbi.png"
+        }
+      ]
+    }
   }
-}
+
+

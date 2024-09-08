@@ -15,7 +15,17 @@ test("CT_001 Deve poder cadastrar um novo filme", async ({ page}) => {
   await page.movies.create(movie);
   await page.popup.haveText(`O filme '${movie.title}' foi adicionado ao catálogo.`); 
 });
-test("CT_002 NÃO deve cadastrar quando o título é duplicado", async ({ page, request}) => {
+test("CT_002 Deve poder remover um filme", async ({ page, request }) => {
+  const movie = data.to_remove;
+  await request.api.postMovie(movie);  
+
+  await page.login.doALogin("admin@zombieplus.com", "pwd123", "Admin"); 
+  await page.movies.remove(movie.title)
+
+  await page.popup.haveText('Filme removido com sucesso.');
+  
+});
+test("CT_003 NÃO deve cadastrar quando o título é duplicado", async ({ page, request}) => {
   const movie = data.duplicate    
   
   await request.api.postMovie(movie)
@@ -38,3 +48,27 @@ test("CT_00x NÃO deve cadastrar quando os campos obrigatorios não são preench
     'Campo obrigatório'
   ])
 });
+
+test('CT-00X Deve realizar buscar pelo termo zumbi ', async ( { page, request }) => {
+  const movies = data.search
+
+  movies.data.forEach(async (m) => {
+    await request.api.postMovie(m);
+  })
+  await page.login.doALogin("admin@zombieplus.com", "pwd123", "Admin");  
+  await page.movies.search(movies.input)
+  await page.movies.tableHave(movies.outputs)
+})
+test('CT-00X Deve realizar buscar por todos os filmes', async ( { page, request }) => {
+  const movies = data.search
+  const movie = data.guerra_mundial_z 
+
+  movies.data.forEach(async (m) => {
+    await request.api.postMovie(m);
+  })
+  await request.api.postMovie(movie);
+  await page.login.doALogin("admin@zombieplus.com", "pwd123", "Admin");  
+  await page.click('.actions button');
+  await page.movies.tableHave(movies.outputs, movie.title);
+})
+
