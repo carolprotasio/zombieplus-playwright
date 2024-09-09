@@ -34,7 +34,7 @@ test("CT_003 NÃO deve cadastrar quando o título é duplicado", async ({ page, 
   await page.movies.create(movie);
   await page.popup.haveText(`O título '${movie.title}' já consta em nosso catálogo. Por favor, verifique se há necessidade de atualizações ou correções para este item.`); 
 });
-test("CT_00x NÃO deve cadastrar quando os campos obrigatorios não são preenchidos", async ({ page}) => {
+test("CT_004 NÃO deve cadastrar quando os campos obrigatorios não são preenchidos", async ({ page}) => {
 
   await page.login.doALogin("admin@zombieplus.com", "pwd123", "Admin"); 
 
@@ -49,7 +49,7 @@ test("CT_00x NÃO deve cadastrar quando os campos obrigatorios não são preench
   ])
 });
 
-test('CT-00X Deve realizar buscar pelo termo zumbi ', async ( { page, request }) => {
+test('CT-005 Deve realizar buscar pelo termo zumbi ', async ( { page, request }) => {
   const movies = data.search
 
   movies.data.forEach(async (m) => {
@@ -59,7 +59,7 @@ test('CT-00X Deve realizar buscar pelo termo zumbi ', async ( { page, request })
   await page.movies.search(movies.input)
   await page.movies.tableHave(movies.outputs)
 })
-test('CT-00X Deve realizar buscar por todos os filmes', async ( { page, request }) => {
+test('CT-006 Deve realizar buscar por todos os filmes', async ( { page, request }) => {
   const movies = data.search
   const movie = data.guerra_mundial_z 
 
