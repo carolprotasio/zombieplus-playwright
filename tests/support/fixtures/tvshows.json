@@ -37,7 +37,7 @@
             {
                 "title": "Zombie Nation",
                 "overview": "Um grupo de sobreviventes tenta transportar o único sobrevivente conhecido de uma praga zumbi pelo país para o último laboratório funcional.",
-                "company": "Universal Picturess",
+                "company": "Universal Pictures",
                 "release_year": 2014,
                 "featured": false,
                 "season": 3,
@@ -59,7 +59,7 @@
                 "release_year": 2017,
                 "featured": false,
                 "season": 5,
-                "cover": "/caminho/para/404.pngs"
+                "cover": "/caminho/para/404.png"
             }
         ]
     }

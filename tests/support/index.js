@@ -6,7 +6,7 @@ const { Popup } = require("./actions/Components");
 const { Movies } = require("./actions/Movies");
 const { TvShows } = require("./actions/Tvshows");
 
-const {Api} = require("./api/index")
+const { Api } = require("./api/index");
 
 const test = base.extend({
   page: async ({ page }, use) => {
@@ -20,8 +20,8 @@ const test = base.extend({
 
     await use(context);
   },
-  request: async ( {request }, use ) => {
-    const context = request
+  request: async ({ request }, use) => {
+    const context = request;
 
     context["api"] = new Api(request);
 
@@ -29,7 +29,5 @@ const test = base.extend({
 
     await use(context);
   },
-
-
 });
 module.exports = { test, expect };
