@@ -2,9 +2,9 @@ const { test, expect } = require("../support/index");
 const { executeSql } = require("../support/database");
 const { faker } = require("@faker-js/faker");
 
-/* test.beforeAll(async () => {
+test.beforeAll(async () => {
   await executeSql("DELETE FROM leads");
-}); */
+}); 
 
 test("CT-001 Deve cadastrar com sucesso um lead na fila de espera", async ({
   page,

@@ -68,9 +68,7 @@ export class TvShows {
 	}
 
 	async tableHave(content) {
-		const rows = await this.page.getByRole("row");
-		const rowTexts = await rows.allTextContents();
-    console.log(rowTexts);  
+		const rows = await this.page.getByRole("row");		   
 		await expect(rows).toContainText(content);
 	}
 }

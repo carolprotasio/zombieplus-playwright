@@ -49,10 +49,22 @@ export class Movies {
 		await this.page.getByPlaceholder("Busque pelo nome").fill(target);
 		await this.page.click(".actions button");
 	}
-	async tableHave(content) {
-		const rows = await this.page.getByRole("row");
+/* 	async tableHave(content) {
+		const rows = await this.page.getByRole('rows');
 		await expect(rows).toContainText(content);
-	}
+	} */
+
+		async tableHave(content) {
+			const rows = await this.page.getByRole("row");
+		
+			for (let i = 0; i < rows.length; i++) {
+			  const rowText = await rows[i].textContent();
+			  const title = rowText.split(/(\d+ Temporadas)/)[0].trim();
+			  await expect(title).toBe(content[i]);
+			}
+		  }
+		
+
 
 	async alertHaveText(target) {
 		await expect(this.page.locator(".alert")).toHaveText(target);

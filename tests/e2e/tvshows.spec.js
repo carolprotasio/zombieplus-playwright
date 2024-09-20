@@ -21,16 +21,17 @@ test("CT_002 Deve poder remover uma serie", async ({ page, request }) => {
   await page.login.doALogin("admin@zombieplus.com", "pwd123", "Admin");
   await page.tvShow.goToTvShows();
   await page.movies.remove(serie.title);
-
+  await page.waitForTimeout(500);
   await page.popup.haveText("Série removida com sucesso.");
 });
 test("CT-003 Não permitir o cadastro de séries com títulos já existentes.", async ({  page,  request,}) => {
   const serie = data.duplicate;
+  await executeSql("DELETE FROM tvshows");
 
   await request.api.postTvShow(serie);
   await page.login.doALogin("admin@zombieplus.com", "pwd123", "Admin");
   await page.tvShow.createTvShow(serie);
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(3000);
   await page.popup.haveText(
     `O título '${serie.title}' já consta em nosso catálogo. Por favor, verifique se há necessidade de atualizações ou correções para este item.`
   );

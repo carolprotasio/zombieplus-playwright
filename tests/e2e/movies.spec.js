@@ -18,6 +18,7 @@ test("CT-001 Deve poder cadastrar um novo filme", async ({ page }) => {
 });
 test("CT-002 Deve poder remover um filme", async ({ page, request }) => {
   const movie = data.to_remove;
+  
   await request.api.postMovie(movie);
 
   await page.login.doALogin("admin@zombieplus.com", "pwd123", "Admin");
@@ -27,16 +28,15 @@ test("CT-002 Deve poder remover um filme", async ({ page, request }) => {
 });
 test("CT-003 NÃO deve cadastrar quando o título é duplicado", async ({
   page,
-  request,
-}) => {
+  request,}) => {  
   const movie = data.duplicate;
-
-  await request.api.postMovie(movie);
+  await request.api.postMovie(movie); 
 
   await page.login.doALogin("admin@zombieplus.com", "pwd123", "Admin");
+  await page.waitForTimeout(5000);
   await page.movies.create(movie);
 
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(2000);
   await page.popup.haveText(
     `O título '${movie.title}' já consta em nosso catálogo. Por favor, verifique se há necessidade de atualizações ou correções para este item.`
   );
