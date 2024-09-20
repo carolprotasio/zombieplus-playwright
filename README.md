@@ -3,7 +3,7 @@
 
 O Zombie+ é uma aplicação voltada para a automação de testes de regressão de uma plataforma web e API. Originalmente, os testes da aplicação eram realizados de forma manual, conforme documentado [aqui](https://qaxperience.notion.site/Zombie-Regression-Tests-5d726cfee1484a2e9ee177b9467cb00c). O objetivo deste projeto é automatizar esses testes, garantindo a cobertura e a confiabilidade dos principais cenários da aplicação.
 
-## Testes de Regressão Automatizado com Playwright
+## 🚀 Testes de Regressão Automatizado com Playwright
 A transição dos testes manuais para testes automatizados busca:
 - Reduzir o tempo necessário para validar funcionalidades.
 - Garantir maior cobertura de testes.
@@ -11,7 +11,7 @@ A transição dos testes manuais para testes automatizados busca:
 
 <img src="https://github.com/carolprotasio/zombieplus-playwright/blob/main/tests/assets/home.png" alt="web" width="700"/>
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 - **Playwright**: Framework para testes automatizados, garantindo a simulação de interações com a interface e API.
 - **Node.js**: Plataforma de execução JavaScript utilizada para rodar os testes.
 - **PostgreSQL**: Banco de dados relacional para armazenamento de dados da aplicação.
@@ -22,18 +22,12 @@ A transição dos testes manuais para testes automatizados busca:
 - **dotenv**: Gerenciamento de variáveis de ambiente, facilitando a configuração dos testes.
 - **faker.js**: Biblioteca para geração de dados fictícios, utilizados nos cenários de testes.
   
-## Arquitetura do Projeto
-O projeto conta com duas camadas principais:
-1. **API**: Executada na porta 3333, responsável por fornecer os dados necessários à aplicação.
-2. **Interface Web**: A aplicação web opera na porta 3000, onde os testes de interface são executados.
-3. **Project Playwright**: Onde foram realizados os testes automatizados 
-
 O ambiente de desenvolvimento é configurado via Docker, utilizando containers tanto para o banco de dados quanto para a administração via pgAdmin.
 
 <img src="https://github.com/carolprotasio/zombieplus-playwright/blob/main/tests/assets/docker.png" alt="web" width="700"/>
 <img src="https://github.com/carolprotasio/zombieplus-playwright/blob/main/tests/assets/pgAdmin.png" alt="web" width="700"/>
 
-## Cenários e Casos de Teste
+## 🔍 Cenários e Casos de Teste
 
 Os testes end-to-end (E2E) são organizados de acordo com os cenários descritos nos testes manuais originais, e cada cenário cobre um conjunto de casos de testes específicos. Abaixo estão alguns dos principais cenários e seus respectivos casos:
 
@@ -107,13 +101,13 @@ Os testes end-to-end (E2E) são organizados de acordo com os cenários descritos
 
  <img src="https://github.com/carolprotasio/zombieplus-playwright/blob/main/tests/assets/tvshow.png" alt="web" width="500"/>
 
- ## Validação com Postman
+ ## 📬 Validação com Postman
 Além dos testes automatizados desenvolvidos com o Playwright, as funcionalidades descritas acima foram validadas também utilizando o **Postman** para assegurar o comportamento correto das APIs. O Postman permitiu realizar chamadas diretas à API, simulando os cenários de cadastro, login e gerenciamento de filmes e séries, garantindo que os endpoints estavam respondendo conforme esperado.
 
 <img src="https://github.com/carolprotasio/zombieplus-playwright/blob/main/tests/assets/postman.png" alt="web" width="700"/>
  
 
-## Execução do Projeto
+##  🚀 Execução do Projeto
 
 ### Pré-requisitos
 - [Node.js](https://nodejs.org/) instalado.
@@ -138,8 +132,6 @@ Execute os testes:
 ``` bash
 npx playwright test
 ```
-## Conclusão
+## ✅ Conclusão
 Este projeto demonstrou a importância da automação de testes para garantir a qualidade e a estabilidade de uma aplicação em constante evolução. Com a utilização do Playwright para testes end-to-end e a validação das APIs com o Postman, conseguimos assegurar uma cobertura ampla das principais funcionalidades da aplicação.
-
-## Créditos
 Este projeto foi realizado como parte do curso oferecido pela [QA Xperience](https://cursos.qaxperience.com/pt/sobre), onde foram abordadas práticas avançadas de automação de testes e qualidade de software.
